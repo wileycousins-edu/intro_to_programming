@@ -14,4 +14,4 @@ After taking these 12 classes you will be profecient at writing code. Meaning th
 
 ##lessons
 
-* [lesson 1](https://github.com/wileycousins-edu/intro_programming_1)
+* [lesson 1](https://github.com/wileycousins-edu/intro_to_programming_1)
