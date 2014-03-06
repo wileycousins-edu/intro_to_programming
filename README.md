@@ -15,3 +15,20 @@ After taking these 12 classes you will be profecient at writing code. Meaning th
 ##lessons
 
 * [lesson 1](https://github.com/wileycousins-edu/intro_to_programming_1)
+
+##class schedule
+| Number | Day | Date | Time |
+| ------ | --- | ---- | ---- |
+| #1 | Thursday | March 6th | 5:30 - 6:30pm |
+| #2 | Thursday | March 13th | 5:30 - 6:30pm |
+| #3 | Thursday | March 20th | 5:00 - 6:00pm |
+| #4 | Friday | March 28th | 5:30 - 6:30pm |
+| #5 | Thursday | April 3rd | 5:30 - 6:30pm |
+| #6 | Friday | April 11th | 5:30 - 6:30pm |
+| #7 | Thursday | April 17th | 5:00 - 6:00pm |
+| #8 | Thursday | April 25th | 5:30 - 6:30pm |
+| #9 | Thursday | May 1st | 5:30 - 6:30pm |
+| #10 | Thursday | May 8th | 5:30 - 6:30pm |
+| #11 | Thursday | May 15th | 5:30 - 6:30pm |
+| #12 | Thursday | May 23rd | 5:30 - 6:30pm |
+
