@@ -32,3 +32,7 @@ After taking these 12 classes you will be profecient at writing code. Meaning th
 | #11 | Thursday | May 15th | 5:30 - 6:30pm |
 | #12 | Thursday | May 23rd | 5:30 - 6:30pm |
 
+##current students
+* [fork tree](https://github.com/wileycousins-edu/intro_to_programming_1/network)
+* [roster](https://github.com/wileycousins-edu/intro_to_programming_1/network/members)
+
