@@ -50,9 +50,11 @@ public class WritingUtensil {
   // deteriorationRate calculates how quickly the contents get used up
   // returns a float representation of that. 
   float deteriorationRate(float pressure_used){
+    return 0.0;
   }
   
   float contentVolume(){
+    return 0.0;
   }
   
   float updateContentsVolume(){
