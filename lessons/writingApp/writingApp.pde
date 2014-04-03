@@ -3,9 +3,19 @@ void setup(){
 }
 
 void draw(){
-  background(255);
-  fill(0);
-  text("i will making a writing utensil!", 100,100);
+  background(100);
   
-//  myWritingUtensil.write();
+  translate(0,0,0);
+  noStroke();
+  lights();
+  sphere(20);
+  
+  noFill();
+  stroke(0);
+  
+  translate(width/2, height/2, 200);
+  rotateY(PI/5);
+  rotateX(PI/9);
+  box(10,20,20);
+  
 }
