@@ -198,7 +198,8 @@ static void coneDetail(int det) {
 
 // places a cone with it's base centred at (x,y),
 // beight h in positive z, radius r.
-void cone(float x, float y, float r, float h) {
+void cone(float r, float h) {
+  pushMatrix();
   scale(r,1,r);
   beginShape(TRIANGLES);
   for (int i = 0; i < coneDetail; i++) {
@@ -207,6 +208,6 @@ void cone(float x, float y, float r, float h) {
     vertex(0, h, 0);
   }
   endShape();
-  scale(1/r,1,1/r);
+  popMatrix();
 }
 
