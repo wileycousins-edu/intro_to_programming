@@ -71,24 +71,31 @@ public class WritingUtensil {
 
   // draws the writing utensil shell to the screen
   void render() {
-    pushMatrix(); // {
+    pushMatrix();
     noStroke();
-//    stroke(255);
+    // move to where the utensil is
     translate(location.x, location.y, location.z);
+    // rotate to the orientation vectors
     rotateX(orientation.x);
     rotateY(orientation.y);
     rotateZ(orientation.z);
+    // set the fill color
     fill(my_color);
+    // draw the body
     cylinder(body_radius, body_height, 20);
     // move the active drawing location to, the end of the body
     translate(0, body_height/2, 0);
+    // neck is green for now
     fill(0,255,0);
+    // draw the neck
     cone(body_radius, neck_height);
-    noStroke();
+    // set the tip to blue for now
     fill(0,0,255);
+    // move to the tip
     translate(0, neck_height, 0);
+    // draw the tip
     cylinder(tip_radius, tip_height, 20);
-    // }
+    
     popMatrix();
   }
 
