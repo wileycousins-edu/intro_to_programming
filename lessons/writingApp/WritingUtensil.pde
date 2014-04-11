@@ -71,21 +71,24 @@ public class WritingUtensil {
 
   // draws the writing utensil shell to the screen
   void render() {
-    pushMatrix();
+    pushMatrix(); // {
     noStroke();
+//    stroke(255);
     translate(location.x, location.y, location.z);
     rotateX(orientation.x);
     rotateY(orientation.y);
     rotateZ(orientation.z);
     fill(my_color);
-    cylinder(body_radius, body_height, 25);
+    cylinder(body_radius, body_height, 20);
+    // move the active drawing location to, the end of the body
     translate(0, body_height/2, 0);
     fill(0,255,0);
-    cone(0, 0, body_radius, neck_height);
+    cone(body_radius, neck_height);
     noStroke();
     fill(0,0,255);
     translate(0, neck_height, 0);
-    cylinder(tip_radius, tip_height, 25);
+    cylinder(tip_radius, tip_height, 20);
+    // }
     popMatrix();
   }
 
@@ -118,6 +121,7 @@ public class WritingUtensil {
   void setContents(Content content) {
   }
 }
+
 /**
  cylinder taken from http://wiki.processing.org/index.php/Cylinder
  @author matt ditton
