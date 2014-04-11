@@ -6,7 +6,7 @@ public class WritingUtensil {
   int tip_radius;
   String name;
   PVector location;
-  float neck_slope;
+  float neck_height;
   PVector orientation;
   Content content;
 
@@ -18,7 +18,7 @@ public class WritingUtensil {
     tip_radius = 5;
     name = "Default Utensil";
     location = new PVector(0, 0, 0);
-    neck_slope = PI/10;
+    neck_height = 40;
     orientation = new PVector(0, 0, 0);
   }
 
@@ -81,10 +81,10 @@ public class WritingUtensil {
     cylinder(body_radius, body_height, 25);
     translate(0, body_height/2, 0);
     fill(0,255,0);
-    cone(0, 0, body_radius, 40);
+    cone(0, 0, body_radius, neck_height);
     noStroke();
     fill(0,0,255);
-    translate(0, 40, 0);
+    translate(0, neck_height, 0);
     cylinder(tip_radius, tip_height, 25);
     popMatrix();
   }
