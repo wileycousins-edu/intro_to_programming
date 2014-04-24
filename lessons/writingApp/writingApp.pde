@@ -11,7 +11,7 @@ void setup() {
   my_utensil.location = new PVector(width/2, height/2, 100);
   my_utensil.orientation = new PVector(PI/5, 0, 0);
   
-  my_utensil.setContent(new Content());
+  my_utensil.setContents(new Content());
   
   background(100);
 }
@@ -33,7 +33,7 @@ void draw() {
   my_utensil.render(true);
   
   if ( mousePressed ) {
-    my_utentsil.write();
+    my_utensil.write();
   }
 }
 

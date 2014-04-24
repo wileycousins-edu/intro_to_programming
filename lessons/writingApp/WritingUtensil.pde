@@ -14,8 +14,8 @@ public class WritingUtensil {
     my_color = color(200, 10, 10);
     body_height = 100;
     body_radius = 20;
-    tip_height = 20;
-    tip_radius = 5;
+    tip_height = 10;
+    tip_radius = 1;
     name = "Default Utensil";
     location = new PVector(0, 0, 0);
     neck_height = 40;
@@ -32,7 +32,7 @@ public class WritingUtensil {
   void write() {
     // might be a good to handle this...
     // write(1.0);
-    
+    content.write(location.x,location.y,location.z);
   }
 
   // write puts pigment of contents on the screen
@@ -75,7 +75,7 @@ public class WritingUtensil {
     pushMatrix();
     noStroke();
     // move to where the utensil is
-    translate(location.x, location.y, location.z);
+    translate(location.x, location.y-neck_height-tip_height, location.z);
     // rotate to the orientation vectors
     rotateX(orientation.x);
     rotateY(orientation.y);
@@ -85,7 +85,7 @@ public class WritingUtensil {
     // draw the body
     cylinder(body_radius, body_height, 20);
     // move the active drawing location to, the end of the body
-    translate(0, body_height/2, 0);
+//    translate(0, 0, 0);
     // neck is green for now
     fill(0,255,0);
     // draw the neck
@@ -93,11 +93,13 @@ public class WritingUtensil {
     // set the tip to blue for now
     fill(0,0,255);
     // move to the tip
-    translate(0, neck_height, 0);
+    translate(0, neck_height+tip_height, 0);
     // draw the tip
     cylinder(tip_radius, tip_height, 20);
     
     popMatrix();
+    
+    content.render();
   }
 
   // same as other render, but takes boolean arg to tell whether to display help text
@@ -152,10 +154,10 @@ void cylinder(float w, float h, int sides)
   //draw the top of the cylinder
   beginShape(TRIANGLE_FAN);
 
-  vertex(0, -h/2, 0);
+  vertex(0, -h, 0);
 
   for (int i=0; i < x.length; i++) {
-    vertex(x[i], -h/2, z[i]);
+    vertex(x[i], -h, z[i]);
   }
 
   endShape();
@@ -164,8 +166,8 @@ void cylinder(float w, float h, int sides)
   beginShape(QUAD_STRIP); 
 
   for (int i=0; i < x.length; i++) {
-    vertex(x[i], -h/2, z[i]);
-    vertex(x[i], h/2, z[i]);
+    vertex(x[i], -h, z[i]);
+    vertex(x[i], 0, z[i]);
   }
 
   endShape();
@@ -173,10 +175,10 @@ void cylinder(float w, float h, int sides)
   //draw the bottom of the cylinder
   beginShape(TRIANGLE_FAN); 
 
-  vertex(0, h/2, 0);
+  vertex(0, 0, 0);
 
   for (int i=0; i < x.length; i++) {
-    vertex(x[i], h/2, z[i]);
+    vertex(x[i], 0, z[i]);
   }
 
   endShape();

@@ -8,15 +8,20 @@ public class Content {
     trail = new ArrayList<PVector>();
   }
 
-  public write(int x, int y, int z) {
-    trail.push(new PVector(x, y, z));
+  void write(float x, float y, float z) {
+    trail.add(new PVector(x, y, z));
   }
 
-  public draw() {
-    fill(my_color);
-    beginShape(LINE);
+  void render() {
+    stroke(my_color);
+    noFill();
+    beginShape();
     for (PVector point : trail) {
-      vertex(point.x, point.y, point.x);
+//      pushMatrix();
+//      translate();
+      curveVertex(point.x, point.y, point.z);
+      println(point);
+//      popMatrix();
     }
     endShape();
   }
