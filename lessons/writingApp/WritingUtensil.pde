@@ -32,6 +32,7 @@ public class WritingUtensil {
   void write() {
     // might be a good to handle this...
     // write(1.0);
+    
   }
 
   // write puts pigment of contents on the screen
@@ -125,7 +126,8 @@ public class WritingUtensil {
 
   // set the content of the writing utensil to the passed in content
   // accepts one parameter, the content to set to
-  void setContents(Content content) {
+  void setContents(Content content_in) {
+    content = content_in;
   }
 }
 
