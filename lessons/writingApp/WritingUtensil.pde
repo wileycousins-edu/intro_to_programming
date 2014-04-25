@@ -32,7 +32,7 @@ public class WritingUtensil {
   void write() {
     // might be a good to handle this...
     // write(1.0);
-    content.write(location.x,location.y,location.z);
+    content.write(location.x, location.y, location.z);
   }
 
   // write puts pigment of contents on the screen
@@ -85,20 +85,20 @@ public class WritingUtensil {
     // draw the body
     cylinder(body_radius, body_height, 20);
     // move the active drawing location to, the end of the body
-//    translate(0, 0, 0);
+    //    translate(0, 0, 0);
     // neck is green for now
-    fill(0,255,0);
+    fill(0, 255, 0);
     // draw the neck
     cone(body_radius, neck_height);
     // set the tip to blue for now
-    fill(0,0,255);
+    fill(0, 0, 255);
     // move to the tip
     translate(0, neck_height+tip_height, 0);
     // draw the tip
     cylinder(tip_radius, tip_height, 20);
-    
+
     popMatrix();
-    
+
     content.render();
   }
 
@@ -215,11 +215,11 @@ static void coneDetail(int det) {
 // beight h in positive z, radius r.
 void cone(float r, float h) {
   pushMatrix();
-  scale(r,1,r);
+  scale(r, 1, r);
   beginShape(TRIANGLES);
   for (int i = 0; i < coneDetail; i++) {
-    vertex(unitConeX[i],0, unitConeY[i]);
-    vertex(unitConeX[i+1],0, unitConeY[i+1]);
+    vertex(unitConeX[i], 0, unitConeY[i]);
+    vertex(unitConeX[i+1], 0, unitConeY[i+1]);
     vertex(0, h, 0);
   }
   endShape();

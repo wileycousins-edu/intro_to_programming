@@ -2,6 +2,7 @@ WritingUtensil my_utensil;
 
 boolean follow_mouse = false;
 boolean rotate_mouse = false;
+PFont f;
 
 void setup() {
   size(600, 600, P3D);
@@ -10,28 +11,31 @@ void setup() {
   my_utensil.my_color = color(200, 200, 255);
   my_utensil.location = new PVector(width/2, height/2, 100);
   my_utensil.orientation = new PVector(PI/5, 0, 0);
-  
+
   my_utensil.setContents(new Content());
-  
+
   background(100);
+
+  f = createFont("Georgia", 24);
+  textFont(f);
 }
 
 void draw() {
   background(100);
   pushMatrix();
-  fill(225,20,20);
-  text("press SHIFT to toggle mouse follow", 10, 10);
-  text("press ALT to toggle mouse rotate", 10, 30);
+  fill(225, 20, 20);
+  text("press SHIFT to toggle mouse follow", 10, 20);
+  text("press ALT to toggle mouse rotate", 10, 40);
   popMatrix();
   //  my_utensil.spin(new PVector(PI/50,0,PI/100));
   if ( follow_mouse )
     my_utensil.location = new PVector(mouseX, mouseY, 100);
-  if ( rotate_mouse ){
+  if ( rotate_mouse ) {
     my_utensil.orientation.x = map(mouseX, 0, width, -PI/2, PI/2);
     my_utensil.orientation.z = map(mouseY, 0, height, -PI/2, PI/2);
   }
-  my_utensil.render(true);
-  
+  my_utensil.render();
+
   if ( mousePressed ) {
     my_utensil.write();
   }
